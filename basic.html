@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="ONG Verde Vida - Protegendo a natureza com ações sustentáveis e educação ambiental." />
+  <title>ONG Verde Vida</title>
+  <link rel="stylesheet" href="basic.css" />
+</head>
+<body>
+  <main>
+    <section class="hero-section">
+      <div class="container">
+        <h1>Proteja a Natureza com a ONG Verde Vida</h1>
+        <p class="lead">O que os milhares de voluntários estão fazendo faz a diferença?</p>
+      </div>
+    </section>
+
+    <section class="benefits">
+      <div class="container">
+        <h2>Por que apoiar a Verde Vida?</h2>
+        <div class="features">
+          <div class="feature-card">
+            <h3>🌱 Reflorestamento</h3>
+            <p>Plantamos árvores em áreas degradadas com apoio da comunidade.</p>
+          </div>
+          <div class="feature-card">
+            <h3>📚 Educação Ambiental</h3>
+            <p>Levamos conhecimento ecológico para escolas e centros comunitários.</p>
+          </div>
+          <div class="feature-card">
+            <h3>🧹 Limpeza de Ecossistemas</h3>
+            <p>Organizamos mutirões para limpar praias, rios e trilhas.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="impact">
+      <div class="container">
+        <h2>Nosso impacto até agora</h2>
+        <div class="stats">
+          <div class="stat"><strong>12.450</strong><span>Árvores plantadas</span></div>
+          <div class="stat"><strong>320</strong><span>Voluntários ativos</span></div>
+          <div class="stat"><strong>48</strong><span>Comunidades atendidas</span></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="carrossel">
+      <div class="container">
+        <h2>Galeria Verde Vida</h2>
+        <div class="carrossel-wrapper">
+          <button class="carrossel-btn prev">&#10094;</button>
+          <div class="carrossel-track">
+            <img src="baixados (3).jpg" alt="Floresta Verde exuberante" />
+            <img src="Forest Aesthetic.jpg" alt="Paisagem de floresta com luz suave" />
+            <img src="baixados (4).jpg" alt="Floresta com rio cristalino" />
+          </div>
+          <button class="carrossel-btn next">&#10095;</button>
+        </div>
+      </div>
+    </section>
+
+    <section class="testimonials">
+      <div class="container">
+        <h2>O que dizem nossos voluntários</h2>
+        <div class="testimonial-list">
+          <div class="testimonial">
+            <p>"Participar da Verde Vida mudou minha relação com a natureza."</p>
+            <span>— Ana Souza, voluntária desde 2023</span>
+          </div>
+          <div class="testimonial">
+            <p>"Nunca imaginei que plantar árvores pudesse ser tão transformador."</p>
+            <span>— Carlos Lima, coordenador local</span>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 ONG Verde Vida. Todos os direitos reservados.</p>
+  </footer>
+
+  <!-- Script para funcionalidade do carrossel -->
+  <script>
+    const track = document.querySelector('.carrossel-track');
+    const prevBtn = document.querySelector('.carrossel-btn.prev');
+    const nextBtn = document.querySelector('.carrossel-btn.next');
+    let index = 0;
+
+    const updateCarousel = () => {
+      const width = track.children[0].offsetWidth;
+      track.style.transform = `translateX(-${index * width}px)`;
+    };
+
+    nextBtn.addEventListener('click', () => {
+      if (index < track.children.length - 1) index++;
+      updateCarousel();
+    });
+
+    prevBtn.addEventListener('click', () => {
+      if (index > 0) index--;
+      updateCarousel();
+    });
+
+    window.addEventListener('resize', updateCarousel);
+  </script>
+</body>
+</html>
